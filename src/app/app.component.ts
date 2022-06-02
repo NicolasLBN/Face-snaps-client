@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { FaceSnap } from './models/face-snap.model';
 
 @Component({
@@ -8,32 +10,15 @@ import { FaceSnap } from './models/face-snap.model';
 })
 export class AppComponent implements OnInit {
   faceSnaps!: FaceSnap[];
+  interval$!: Observable<string>;
 
   ngOnInit() {
-    this.faceSnaps = [
-      {
-        title: 'Archibald',
-        description: 'Mon meilleur ami depuis tout petit !',
-        imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-        createdDate: new Date(),
-        snaps: 0,
-        location: 'Paris'
-      },
-      {
-        title: 'Three Rock Mountain',
-        description: 'Un endroit magnifique pour les randonnées.',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
-        createdDate: new Date(),
-        snaps: 6,
-        location: 'la montagne'
-      },
-      {
-        title: 'Un bon repas',
-        description: 'Mmmh que c\'est bon !',
-        imageUrl: 'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
-        createdDate: new Date(),
-        snaps: 0
-      }
-    ];
+   this.interval$ = interval(1000).pipe(
+     map(value => value % 2 === 0 ?
+      `Je suis value ${value} et je suis pair` :
+      `Je suis value ${value} et je suis impair`
+      ),
+      tap(text => console.log(text))
+   );
   }
 }

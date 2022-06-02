@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { FaceSnap } from '../models/face-snap.model';
 
 @Component({
@@ -38,6 +40,9 @@ export class FaceSnapListComponent implements OnInit {
         snaps: 0
       }
     ];
+    interval(500).pipe(
+      tap(console.log)
+    ).subscribe();
   }
 
 }
