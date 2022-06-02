@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'facesnaps', component: FaceSnapListComponent },
+  { path: 'create', component: NewFaceSnapComponent },
+  { path: '', component: LandingPageComponent },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -40,9 +40,9 @@ export class FaceSnapListComponent implements OnInit {
         snaps: 0
       }
     ];
-    interval(500).pipe(
+    /*interval(500).pipe(
       tap(console.log)
-    ).subscribe();
+    ).subscribe();*/
   }
 
 }
