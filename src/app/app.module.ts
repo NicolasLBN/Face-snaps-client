@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
+import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NewFaceSnapComponent } from './new-face-snap/new-face-snap.component';
     FaceSnapListComponent,
     HeaderComponent,
     LandingPageComponent,
-    NewFaceSnapComponent
+    NewFaceSnapComponent,
+    SingleFaceSnapComponent,
   ],
   imports: [
     BrowserModule,
