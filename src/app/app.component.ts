@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { FaceSnap } from './models/face-snap.model';
+import { FaceSnap } from './core/models/face-snap.model';
 
 @Component({
   selector: 'app-root',
